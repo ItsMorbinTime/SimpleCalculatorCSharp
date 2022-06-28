@@ -9,6 +9,7 @@ namespace SimpleCalculator
             long num1;
             long num2;
             double result;
+            double srresult;
             
             try {
                 Console.WriteLine("Input A Number: ");
@@ -30,7 +31,10 @@ namespace SimpleCalculator
                             "+ = Add\n" +
                             "- = Substract\n" +
                             "* = Multiply\n" +
-                            "/ = Divide");
+                            "/ = Divide\n" +
+                            "^ = Exponent\n" +
+                            "% = Square root\n" +
+                            "(Will find square root of 1st & 2nd number)");
 
             switch(Console.ReadLine())
             {
@@ -50,11 +54,21 @@ namespace SimpleCalculator
                 result = num1 / num2;
                 Console.WriteLine($"{num1} / {num2} = {result}");
                 break;
+                case "%":
+                    result = Math.Sqrt(num1);
+                    srresult = Math.Sqrt(num2);
+                    Console.WriteLine($"√{num1} = {result}\n" +
+                                      $"√{num2} = {srresult}");
+                    break;
+                case "^":
+                    result = Math.Pow(num1, num2);
+                    Console.WriteLine($"{num1}^{num2} = {result}");
+                break;
 
                 default:
                     Console.WriteLine("Input is not valid!");
                     break;
-                
+
             }
         }
     }
